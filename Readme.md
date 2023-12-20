@@ -1,4 +1,4 @@
-# Gupy's Kerbalism Config
+# Spacelines Kerbalism Config
 
 A default Kerbalism config for use with BDB mod and other related mods.
 
