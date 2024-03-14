@@ -8,6 +8,7 @@ Other Mods included are:
 
 ### Requires
 - Bluedog Design Bureau
+- [Spacelines Tech Tree](https://github.com/Gupyzer0/Spacelines_Tree)
 
 ### Attention
 The BD_Extras patch "Pafftek/HypergolicBDB" is already implemented and should not be installed.
