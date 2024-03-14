@@ -1,10 +1,13 @@
 # Spacelines Kerbalism Config
-A Kerbalism config based on SSS and ROKerbalism to work with BDB
+A Kerbalism config based on Skyhawk Science System and ROKerbalism to work mainly with BDB.
+
+Other Mods included are:
+- X-20 Moroz.
+- Shuttle Orbiter Construction Kit (SOCK).
+- reDIRECT
 
 ### Requires
 - Bluedog Design Bureau
 
 ### Attention
-The following BD_Extras are used and should not be installed.
-
-- Pafftek/HypergolicBDB
+The BD_Extras patch "Pafftek/HypergolicBDB" is already implemented and should not be installed.
