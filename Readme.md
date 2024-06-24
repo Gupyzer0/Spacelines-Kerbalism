@@ -5,6 +5,7 @@ A Kerbalism config based on Skyhawk Science System and ROKerbalism to work mainl
 - X-20 Moroz.
 - Shuttle Orbiter Construction Kit (SOCK).
 - Artemis Construction Kit (needs testing).
+- Commonwealth Aeronautics / Rockets.
 
 ### Requires
 - Bluedog Design Bureau
