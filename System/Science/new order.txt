@@ -1,0 +1,189 @@
+
+
+//=======================================================
+// Visible Imaging Experiments
+//=======================================================
+bd_weather -> RP0visibleImaging1
+bd_camera -> depends on tier
+bd_SiteSurvey -> RP0visibleImaging3
+
+RP0visibleImaging1 -> Video Imaging -> Ranger Block 2 camera
+RP0visibleImaging2 -> TV Cameras on Mariner 4
+RP0visibleImaging3 -> TV Cameras on Mariner 10 and Viking
+RP0visibleImaging4 -> Solid-State Imager on Galileo
+RP0visibleImaging5 -> HiRISE on MRO
+
+//=======================================================
+// Cherenkov Radiation
+//=======================================================
+Spacelines_Cherenkov -> new experiment for cherenkob radiation
+
+
+//=======================================================
+// Cosmic Ray
+//=======================================================
+bd_GeigerCounter -> RP0cosmicRay1
+bd_cosmicRay -> ?
+bd_TrappedRadiation -> ?
+
+RP0cosmicRay1 -> Geiger Muller Counter
+RP0cosmicRay2 -> Scintillation Counter
+
+//=======================================================
+// IMAGING SPECTROMETRY
+//=======================================================
+
+bd_IRspec -> IR spectrometry -> level 1
+bd_UVspec -> UV spectrometer -> level 2
+
+bd_gammaRay -> Gamma Ray Spectrometry -> level 3 ??
+bd_microwaveSpec -> Microwave Spectrometry -> level 3 ??
+
+bd_multiSpec -> Multispectral Imaging -> level 4
+
+RP0imageSpec1 -> Infrared Interferometer Spectrometer (IRIS)
+RP0imageSpec2 -> Extreme UV Spectrometer on Mariner 10
+RP0imageSpec3 -> NIMS on Galileo
+RP0imageSpec4 -> VIMS on Galileo
+
+
+//=======================================================
+// INFRARED RADIOMETRY
+//=======================================================
+bd_IRradiometer
+
+RP0infraredRad1 -> Infrared Radiometer -> Mariner2 Radiometer
+RP0infraredRad2 -> High Resolution Radiometer (Nimbus)
+RP0infraredRad3 -> Two-channel Radiometer on Mariner 10
+RP0infraredRad4 -> PMIRR on Mars Observer
+
+//=======================================================
+// MAGNETIC SCAN
+//=======================================================
+bd_magScan
+
+RP0magScan1 -> Early Magnetometer Boom (Transit 5)
+RP0magScan2 -> Helium magnetometer on flown on Mariner 4 and many other missions
+RP0magScan3 -> Fluxgate Magnetometer Boom on Voyager and Galileo
+
+//=======================================================
+// MASS SPECTROMETRY
+//=======================================================
+bd_massSpec
+
+RP0massSpec1 -> Ion Mass Spectrometer
+RP0massSpec2 -> Magnetic Ion Mass Spectrometer (MIMS)
+RP0massSpec3 -> Quadropole Mass Spectrometer
+RP0massSpec4 -> Gas Chromatograph-Mass Spectrometer (GC/MS)
+
+//=======================================================
+// MICROMETEORITE DETECTION
+//=======================================================
+logmmImpacts
+bd_dust -> MMeteroid detector on Helios
+bd_pegasus
+
+micrometeoriteDetect
++LargeSurfaceMicrometeoriteDetect
+
+//=======================================================
+// ORBITAL PERTURBATION
+//=======================================================
+gravityScan
+
+RP0orbitalPurturbation1 -> Orbital Perturbation Experiment
+
+//=======================================================
+// PLANETARY PHOTOGRAPHY
+//=======================================================
+bd_mapping (KH1 / KH4)
+bd_surveillance (Gambit)
+
+RP0photos1 -> V-2 launched film camera
+RP0photos1a -> KH-1 early orbital photography
+RP0photos2 -> A KH-4/Zenit Style Experiment
+RP0photos3 -> Gambit | Hexagon
+RP0photos4 -> KH-11 and Hubble sized satellites
+
+//=======================================================
+// PRESSURE SCAN
+//=======================================================
+
+barometerScan
+
+//=======================================================
+// RADIO AND PLASMA WAVE SCIENCE 1
+//=======================================================
+bd_rpws
+
+RP0RPWS1 -> bluedog_Pioneer6_MainAntenna (65)
+RP0RPWS2 -> Solar Wind Analyzer on Helios-A (74)
+RP0RPWS3 -> RPWS on Cassini (97)
+
+
+//=======================================================
+// Surface Sample
+//=======================================================
+bd_soilScoop
+bd_drill
+
+surfaceSample ->Scoop from Surveyor
+surfaceAnalysis ??
+surfaceSample2 ??
+surfaceSample3 -> Deep Surface Sample
+
+//=======================================================
+// Telemetry Report
+//=======================================================
+kerbalism_TELEMETRY
+
+//=======================================================
+// TEMPERATURE SCAN
+//=======================================================
+temperatureScan
+
+
+
+
+
+
+--------------------------------------------------------
+Without Matching RO Experiments
+--------------------------------------------------------
+
+bd_SoilMoisture -> moisture sensor from orbit
+
+bd_Photometer -> Photometry Data
+
+bd_kepler -> Exoplanetary Transit Observations
+
+bd_poke -> ALSEP penetrometer test
+
+bd_oso -> Orbital Sun Observations
+
+bd_atm -> manned -> Solar Telescope Mount Observations (EOSS | Skylab | Apollo Scope)
+
+bd_orbitalScope -> manned
+
+bd_XrayImaging -> X-Ray Imaging
+
+bd_UVscope -> High Resolution Ultraviolet Imaging
+
+bd_TelescopeObservation -> manned
+
+bd_hydrometer -> Moisture Sensor Data (SrfLanded, SrfSplashed, FlyingLow, FlyingHigh)
+
+bd_ionElec -> Ionization and Electrostatic Analysis
+
+bd_radarAltimeter -> Mehm just a radar altimeter
+
+bd_Scatterometer -> Radar Scatterometry Data
+
+bd_SIGINT -> shhhhhhhhhh!!!
+
+bd_solarWind -> Solar wind measurements
+
+bd_XRayDiffract -> X-Ray Diffraction Scan
+
+bd_XRayDiffract -> Use for AlphaParticles Spectrometry
+
