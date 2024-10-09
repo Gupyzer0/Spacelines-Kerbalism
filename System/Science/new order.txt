@@ -1,11 +1,9 @@
-
-
 //=======================================================
 // Visible Imaging Experiments
 //=======================================================
-bd_weather -> RP0visibleImaging1
+bd_weather -> depends on tier
 bd_camera -> depends on tier
-bd_SiteSurvey -> RP0visibleImaging3
+bd_SiteSurvey -> depends on tier
 
 RP0visibleImaging1 -> Video Imaging -> Ranger Block 2 camera
 RP0visibleImaging2 -> TV Cameras on Mariner 4
@@ -13,44 +11,38 @@ RP0visibleImaging3 -> TV Cameras on Mariner 10 and Viking
 RP0visibleImaging4 -> Solid-State Imager on Galileo
 RP0visibleImaging5 -> HiRISE on MRO
 
-//=======================================================
-// Cherenkov Radiation
-//=======================================================
-Spacelines_Cherenkov -> new experiment for cherenkob radiation
+Tier dependant Imaging
+--------------------------
+Tiers 1 - 2 - 3 - 4 -> Spacelines_VisibleImaging1
+Tiers 5 - 6 - 7 -> Spacelines_VisibleImaging2
+Tiers 8 -> Spacelines_VisibleImaging3
+Tiers 9 -> Spacelines_VisibleImaging4
+Tiers 10 -> Spacelines_VisibleImaging5
 
-
 //=======================================================
-// Cosmic Ray
+// Cosmic Ray Stuff
 //=======================================================
-bd_GeigerCounter -> RP0cosmicRay1
-bd_cosmicRay -> ?
-bd_TrappedRadiation -> ?
+bd_GeigerCounter -> Spacelines_GeigerCounter
+bd_cosmicRay -> Spacelines_CosmicRay
+bd_TrappedRadiation -> Spacelines_TrappedRadiation
 
-RP0cosmicRay1 -> Geiger Muller Counter
-RP0cosmicRay2 -> Scintillation Counter
 
 //=======================================================
 // IMAGING SPECTROMETRY
 //=======================================================
+dmImagingPlatform (DMOS)
 
-bd_IRspec -> IR spectrometry -> level 1
-bd_UVspec -> UV spectrometer -> level 2
-
-bd_gammaRay -> Gamma Ray Spectrometry -> level 3 ??
-bd_microwaveSpec -> Microwave Spectrometry -> level 3 ??
-
-bd_multiSpec -> Multispectral Imaging -> level 4
-
-RP0imageSpec1 -> Infrared Interferometer Spectrometer (IRIS)
-RP0imageSpec2 -> Extreme UV Spectrometer on Mariner 10
-RP0imageSpec3 -> NIMS on Galileo
-RP0imageSpec4 -> VIMS on Galileo
-
+bd_IRspec -> IR spectrometry  | Spacelines_IRSpectrometry
+bd_UVspec -> UV spectrometer  | Spacelines_UVSpectrometry
+bd_gammaRay -> Gamma Ray Spectrometry | Spacelines_GammaRaySpectrometry
+bd_microwaveSpec -> Microwave Spectrometry | Spacelines_MicrowaveSpectrometry
+bd_multiSpec -> Multispectral Imaging -> Spacelines_MultiSpectralSpectrometry
 
 //=======================================================
 // INFRARED RADIOMETRY
 //=======================================================
 bd_IRradiometer
+dmRadiometerScan -> (DMOS)
 
 RP0infraredRad1 -> Infrared Radiometer -> Mariner2 Radiometer
 RP0infraredRad2 -> High Resolution Radiometer (Nimbus)
@@ -60,6 +52,8 @@ RP0infraredRad4 -> PMIRR on Mars Observer
 //=======================================================
 // MAGNETIC SCAN
 //=======================================================
+magnetometer (stock)
+magScan (DMOS)
 bd_magScan
 
 RP0magScan1 -> Early Magnetometer Boom (Transit 5)
@@ -89,13 +83,14 @@ micrometeoriteDetect
 //=======================================================
 // ORBITAL PERTURBATION
 //=======================================================
-gravityScan
+gravityScan -> stock
 
 RP0orbitalPurturbation1 -> Orbital Perturbation Experiment
 
 //=======================================================
 // PLANETARY PHOTOGRAPHY
 //=======================================================
+dmReconScan (DMOS)
 bd_mapping (KH1 / KH4)
 bd_surveillance (Gambit)
 
@@ -108,12 +103,12 @@ RP0photos4 -> KH-11 and Hubble sized satellites
 //=======================================================
 // PRESSURE SCAN
 //=======================================================
-
-barometerScan
+barometerScan -> stock
 
 //=======================================================
 // RADIO AND PLASMA WAVE SCIENCE 1
 //=======================================================
+rpwsScan (DMOS)
 bd_rpws
 
 RP0RPWS1 -> bluedog_Pioneer6_MainAntenna (65)
@@ -124,13 +119,27 @@ RP0RPWS3 -> RPWS on Cassini (97)
 //=======================================================
 // Surface Sample
 //=======================================================
+surfaceSample -> stock
+bd_poke -> ALSEP penetrometer test
+dmXRayDiffract (DMOS) -> has a sampler version -> X-Ray Diffraction Scan
+bd_XRayDiffract -> X-Ray Diffraction Scan -> has a sampler version -> make a detailed analysis of the mineral composition of the surface
 bd_soilScoop
 bd_drill
+
 
 surfaceSample ->Scoop from Surveyor
 surfaceAnalysis ??
 surfaceSample2 ??
 surfaceSample3 -> Deep Surface Sample
+
+//=======================================================
+// Surface Studies (dont require a sample but to be close to the surface)
+//=======================================================
+dmNAlbedoScan (DMOS) -> Surface Hydrogen Scan
+dmXRayDiffract (DMOS) -> X-Ray Diffraction Scan
+dmlaserblastscan (DMOS) -> Laser Surface Scan
+bd_XRayDiffract -> X-Ray Diffraction Scan -> make a detailed analysis of the mineral composition of the surface
+
 
 //=======================================================
 // Telemetry Report
@@ -140,38 +149,61 @@ kerbalism_TELEMETRY
 //=======================================================
 // TEMPERATURE SCAN
 //=======================================================
-temperatureScan
+temperatureScan -> stock
+
+// ==========================================================
+// Astronomy
+// ==========================================================
+
+Spacelines_GammaRayAstronomy -> For Explorer 11
+bd_XrayImaging -> X-Ray Imaging -> Spacelines_XrayAstronomy
+bd_UVscope -> High Resolution Ultraviolet Imaging -> Spacelines_UVAstronomy
+infraredTelescope (stock) -> Spacelines_InfraredAstronomy
+
+bd_orbitalScope -> manned ----------|
+bd_TelescopeObservation -> manned   |----> Spacelines_VisibleAstronomy
+scopeScan (DMOS) -> Unmanned -------|
+
+bd_oso -> Orbital Sun Observations -> Spacelines_OrbitalSunObservations
+bd_atm -> manned -> Solar Telescope Mount Observations (EOSS | Skylab | Apollo Scope) -> Spacelines_CrewedOrbitalSunObservations
+bd_kepler -> Exoplanetary Transit Observations -> Spacelines_ExoplanetaryTransitObservations
 
 
 
+// =======================================================
+// Solar Wind
+// =======================================================
+bd_solarWind -> Solar wind measurements
+dmSolarParticles (DMOS)
 
+====================================================
+SIGINT
+====================================================
+bd_SIGINT -> shhhhhhhhhh!!!
+dmSIGINT (DMOS)
 
+=====================================================
+Asteroid and Comets Samples
+=====================================================
+asteroidSample (stock) -> asteroid sample with kerbal
+cometSample_short (stock) -> comet sample with kerbal
+cometSample_intermediate (stock) -> comet sample with kerbal
+cometSample_long (stock) -> comet sample with kerbal
+cometSample_interstellar (stock) -> comet sample with kerbal
+# dmAsteroidScan (DMOS) -> Maybe not include this one
 
 --------------------------------------------------------
-Without Matching RO Experiments
+Other stuff
 --------------------------------------------------------
 
 bd_SoilMoisture -> moisture sensor from orbit
+dmSoilMoisture (DMOS)
 
 bd_Photometer -> Photometry Data
 
-bd_kepler -> Exoplanetary Transit Observations
+bd_hydrometer -> Atmospheric Moisture Sensor Data (SrfLanded, SrfSplashed, FlyingLow, FlyingHigh)
 
-bd_poke -> ALSEP penetrometer test
-
-bd_oso -> Orbital Sun Observations
-
-bd_atm -> manned -> Solar Telescope Mount Observations (EOSS | Skylab | Apollo Scope)
-
-bd_orbitalScope -> manned
-
-bd_XrayImaging -> X-Ray Imaging
-
-bd_UVscope -> High Resolution Ultraviolet Imaging
-
-bd_TelescopeObservation -> manned
-
-bd_hydrometer -> Moisture Sensor Data (SrfLanded, SrfSplashed, FlyingLow, FlyingHigh)
+atmosphereAnalysis (stock) -> Atmosphere Analysis
 
 bd_ionElec -> Ionization and Electrostatic Analysis
 
@@ -179,11 +211,7 @@ bd_radarAltimeter -> Mehm just a radar altimeter
 
 bd_Scatterometer -> Radar Scatterometry Data
 
-bd_SIGINT -> shhhhhhhhhh!!!
+seismicScan (stock) -> Seismic scan
+dmseismicHammer (DMOS)
 
-bd_solarWind -> Solar wind measurements
-
-bd_XRayDiffract -> X-Ray Diffraction Scan
-
-bd_XRayDiffract -> Use for AlphaParticles Spectrometry
 
