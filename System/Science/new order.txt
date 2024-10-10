@@ -1,4 +1,12 @@
 //=======================================================
+// Biological Experiments
+//=======================================================
+bd_bioexp
+
+Spacelines_BioExp1 -> Small fruit flies and other critters
+Spacelines_BioExp2 -> Dogs, monkeys . . .
+
+//=======================================================
 // Visible Imaging Experiments
 //=======================================================
 bd_weather -> depends on tier
@@ -22,21 +30,24 @@ Tiers 10 -> Spacelines_VisibleImaging5
 //=======================================================
 // Cosmic Ray Stuff
 //=======================================================
-bd_GeigerCounter -> Spacelines_GeigerCounter
-bd_cosmicRay -> Spacelines_CosmicRay
-bd_TrappedRadiation -> Spacelines_TrappedRadiation
+bd_GeigerCounter -> Spacelines_CosmicRays1
+
+bd_cosmicRay -> Spacelines_CosmicRays2
+bd_TrappedRadiation -> Spacelines_CosmicRays2
 
 
 //=======================================================
 // IMAGING SPECTROMETRY
 //=======================================================
-dmImagingPlatform (DMOS)
-
 bd_IRspec -> IR spectrometry  | Spacelines_IRSpectrometry
 bd_UVspec -> UV spectrometer  | Spacelines_UVSpectrometry
-bd_gammaRay -> Gamma Ray Spectrometry | Spacelines_GammaRaySpectrometry
 bd_microwaveSpec -> Microwave Spectrometry | Spacelines_MicrowaveSpectrometry
-bd_multiSpec -> Multispectral Imaging -> Spacelines_MultiSpectralSpectrometry
+
+bd_multiSpec -> Multispectral Imaging -> Spacelines_MultiSpectralSpectrometry (includes IR + UV)
+dmImagingPlatform (DMOS) -> Spacelines_MultiSpectralSpectrometry
+
+bd_gammaRay -> Gamma Ray Spectrometry | Spacelines_GammaRaySpectrometry
+
 
 //=======================================================
 // INFRARED RADIOMETRY
@@ -173,13 +184,13 @@ bd_kepler -> Exoplanetary Transit Observations -> Spacelines_ExoplanetaryTransit
 // =======================================================
 // Solar Wind
 // =======================================================
-bd_solarWind -> Solar wind measurements
+bd_solarWind -> Solar wind measurements ->  Spacelines_SolarWind
 dmSolarParticles (DMOS)
 
 ====================================================
 SIGINT
 ====================================================
-bd_SIGINT -> shhhhhhhhhh!!!
+bd_SIGINT -> shhhhhhhhhh!!! -> Spacelines_SIGINT
 dmSIGINT (DMOS)
 
 =====================================================
@@ -192,26 +203,30 @@ cometSample_long (stock) -> comet sample with kerbal
 cometSample_interstellar (stock) -> comet sample with kerbal
 # dmAsteroidScan (DMOS) -> Maybe not include this one
 
+=====================================================
+Atmospheric Experiments
+=====================================================
+bd_hydrometer -> Atmospheric Moisture Sensor Data (SrfLanded, SrfSplashed, FlyingLow, FlyingHigh) -> Spacelines_Hydrometer
+atmosphereAnalysis (stock) -> Atmosphere Analysis -> Spacelines_AtmosphereAnalysis
+
 --------------------------------------------------------
 Other stuff
 --------------------------------------------------------
 
-bd_SoilMoisture -> moisture sensor from orbit
+bd_SoilMoisture -> moisture sensor from orbit -> Spacelines_SoilMoisture
 dmSoilMoisture (DMOS)
 
-bd_Photometer -> Photometry Data
+bd_Photometer -> Photometry Data -> Spacelines_Photometer
 
-bd_hydrometer -> Atmospheric Moisture Sensor Data (SrfLanded, SrfSplashed, FlyingLow, FlyingHigh)
 
-atmosphereAnalysis (stock) -> Atmosphere Analysis
 
-bd_ionElec -> Ionization and Electrostatic Analysis
+bd_ionElec -> Ionization and Electrostatic Analysis -> Spacelines_IonElec
 
-bd_radarAltimeter -> Mehm just a radar altimeter
+bd_radarAltimeter -> Mehm just a radar altimeter -> Spacelines_RadarAltimeter
 
-bd_Scatterometer -> Radar Scatterometry Data
+bd_Scatterometer -> Radar Scatterometry Data -> Spacelines_Scatterometer
 
-seismicScan (stock) -> Seismic scan
+seismicScan (stock) -> Seismic scan -> Spacelines_SeismicScan
 dmseismicHammer (DMOS)
 
 
