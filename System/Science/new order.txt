@@ -52,13 +52,7 @@ bd_gammaRay -> Gamma Ray Spectrometry | Spacelines_GammaRaySpectrometry
 //=======================================================
 // INFRARED RADIOMETRY
 //=======================================================
-bd_IRradiometer
-dmRadiometerScan -> (DMOS)
-
-RP0infraredRad1 -> Infrared Radiometer -> Mariner2 Radiometer
-RP0infraredRad2 -> High Resolution Radiometer (Nimbus)
-RP0infraredRad3 -> Two-channel Radiometer on Mariner 10
-RP0infraredRad4 -> PMIRR on Mars Observer
+bd_IRradiometer -> Spacelines_IRRadiometer
 
 //=======================================================
 // MAGNETIC SCAN
@@ -67,19 +61,15 @@ magnetometer (stock)
 magScan (DMOS)
 bd_magScan
 
-RP0magScan1 -> Early Magnetometer Boom (Transit 5)
-RP0magScan2 -> Helium magnetometer on flown on Mariner 4 and many other missions
-RP0magScan3 -> Fluxgate Magnetometer Boom on Voyager and Galileo
+Spacelines_Magnetometer
+Spacelines_MagneticFluxAnalysis
+Spacelines_MagneticFieldMapping
+Spacelines_LongTermMagneticFieldAnalysis
 
 //=======================================================
 // MASS SPECTROMETRY
 //=======================================================
-bd_massSpec
-
-RP0massSpec1 -> Ion Mass Spectrometer
-RP0massSpec2 -> Magnetic Ion Mass Spectrometer (MIMS)
-RP0massSpec3 -> Quadropole Mass Spectrometer
-RP0massSpec4 -> Gas Chromatograph-Mass Spectrometer (GC/MS)
+bd_massSpec -> Spacelines_MassSpectrometry
 
 //=======================================================
 // MICROMETEORITE DETECTION
