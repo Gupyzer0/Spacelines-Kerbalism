@@ -1,5 +1,5 @@
 //=======================================================
-// Biological Experiments
+// Biological Experiments x
 //=======================================================
 bd_bioexp
 
@@ -7,7 +7,7 @@ Spacelines_BioExp1 -> Small fruit flies and other critters
 Spacelines_BioExp2 -> Dogs, monkeys . . .
 
 //=======================================================
-// Visible Imaging Experiments
+// Visible Imaging Experiments x
 //=======================================================
 bd_weather -> depends on tier
 bd_camera -> depends on tier
@@ -28,7 +28,7 @@ Tiers 9 -> Spacelines_VisibleImaging4
 Tiers 10 -> Spacelines_VisibleImaging5
 
 //=======================================================
-// Cosmic Ray Stuff
+// Cosmic Ray Stuff x
 //=======================================================
 bd_GeigerCounter -> Spacelines_CosmicRays1
 
@@ -37,7 +37,7 @@ bd_TrappedRadiation -> Spacelines_CosmicRays2
 
 
 //=======================================================
-// IMAGING SPECTROMETRY
+// IMAGING SPECTROMETRY x
 //=======================================================
 bd_IRspec -> IR spectrometry  | Spacelines_IRSpectrometry
 bd_UVspec -> UV spectrometer  | Spacelines_UVSpectrometry
@@ -50,12 +50,12 @@ bd_gammaRay -> Gamma Ray Spectrometry | Spacelines_GammaRaySpectrometry
 
 
 //=======================================================
-// INFRARED RADIOMETRY
+// INFRARED RADIOMETRY x
 //=======================================================
 bd_IRradiometer -> Spacelines_IRRadiometer
 
 //=======================================================
-// MAGNETIC SCAN
+// MAGNETOMETER EXPERIMENTS x
 //=======================================================
 magnetometer (stock)
 magScan (DMOS)
@@ -67,12 +67,12 @@ Spacelines_MagneticFieldMapping
 Spacelines_LongTermMagneticFieldAnalysis
 
 //=======================================================
-// MASS SPECTROMETRY
+// MASS SPECTROMETRY x
 //=======================================================
 bd_massSpec -> Spacelines_MassSpectrometry
 
 //=======================================================
-// MICROMETEORITE DETECTION
+// MICROMETEORITE EXPERIMENTS x
 //=======================================================
 logmmImpacts
 bd_dust -> MMeteroid detector on Helios
