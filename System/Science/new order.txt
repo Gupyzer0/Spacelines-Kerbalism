@@ -82,7 +82,7 @@ micrometeoriteDetect
 +LargeSurfaceMicrometeoriteDetect
 
 //=======================================================
-// ORBITAL PERTURBATION
+// ORBITAL PERTURBATION x
 //=======================================================
 gravityScan -> stock
 
