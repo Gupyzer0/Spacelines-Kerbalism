@@ -2,7 +2,7 @@
 // ENGINE TITLE
 // ----------------------------------------------------------------------------
 
-@PART[bluedog_Saturn_Engine_F1]:HAS[@MODULE[Reliability]]:NEEDS[Bluedog_DB,FeatureReliability]:AFTER[KerbalismDefault]
+@PART[]:HAS[@MODULE[Reliability]]:NEEDS[Bluedog_DB,FeatureReliability]:AFTER[KerbalismDefault]
 {   
     // FIRST VARIANT
     @MODULE[Reliability]:HAS[#type[ModuleEngines*]] 
